@@ -1,4 +1,35 @@
 const products = [
+{
+    id: "id1",
+    image: "images/products/backpack.jpg",
+    name: "BackPack",
+    rating: {
+      stars: 3.5,
+      count: 123
+    },
+    priceCents: 2000,
+    keywords: [
+      "backpack",
+      "sports",
+      "school"
+    ]
+  },
+  {
+    id: "id2",
+    image: "images/products/umbrella.jpg",
+    name: "Umbrella",
+    rating: {
+      stars: 5,
+      count: 23
+    },
+    priceCents: 999,
+    keywords: [
+      "umbrella",
+      "rain",
+      "black"
+    ]
+  },
+
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
     image: "images/products/athletic-cotton-socks-6-pairs.jpg",
