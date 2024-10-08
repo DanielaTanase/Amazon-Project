@@ -4,6 +4,7 @@ import { formatCurrency } from '../utils/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { deliveryOptions, getDeliveryOption } from '../../data/deliveryOptions.js';
 import { renderPaymentSummary } from './paymentSummary.js';
+import { renderCheckoutHeader } from '../../styles/pages/checkout/checkoutHeader.js';
 
 export function renderOrderSummary() {
 
@@ -115,11 +116,7 @@ export function renderOrderSummary() {
       link.addEventListener('click', () => {
         const productId = link.dataset.productId;
         removeFromCart(productId);
-
-        const container = document.querySelector(
-          `.js-cart-item-container-${productId}`
-        );
-        container.remove();
+        renderOrderSummary();
         updateCartQuantity();
         renderPaymentSummary();
       });
@@ -195,3 +192,30 @@ export function renderOrderSummary() {
 }
 
 
+/*const today = dayjs();
+console.log(today);
+
+const fiveAfterToday = today.add('5', 'days');
+console.log(fiveAfterToday);
+
+const fiveAfterTodayString = fiveAfterToday.format('D MMMM');
+console.log(fiveAfterTodayString);
+
+const oneMonthAfter = today.add('1', 'month');
+console.log(oneMonthAfter);
+console.log(oneMonthAfter.format('MMMM D'));
+
+const oneMonthBefore = today.subtract('1', 'month');
+console.log(oneMonthBefore.format('D MMMM'));
+
+console.log(today.format('dddd'));
+
+function isWeekend(date) {
+  const myDate = date.format('dddd');
+  if (myDate === 'Saturday' || myDate === 'Sunday') {
+    console.log(myDate);
+  }
+}
+export default isWeekend;
+
+*/
