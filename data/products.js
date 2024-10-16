@@ -35,7 +35,7 @@ class Product {
   }
 
   extraInfoHTML() {
-    return ``
+    return '';
   }
 }
 
@@ -49,8 +49,8 @@ class Clothing extends Product{
 
   extraInfoHTML() {
     return `
-    <a href="${this.sizeChartLink}" target="_blanc">Size Chart</a>
-    `
+    <a href="${this.sizeChartLink}" target="_blank">Size Chart</a>
+    `;
   }
 }
 
