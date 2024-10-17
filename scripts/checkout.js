@@ -11,12 +11,11 @@ import { loadCart } from "../data/cart.js";
 
 async function loadPage() {
 
-	try {
+	//try {
 		//throw 'error1';
-
 		await loadProductsFetch();
 
-		const value = await new Promise((resolve, reject) => {
+		/*const value = await new Promise((resolve, reject) => {
 			throw 'error2';
 			loadCart(() => {
 				reject('error3')
@@ -26,9 +25,7 @@ async function loadPage() {
 	} catch (error) {
     console.log('Unexpected error. Please try again later!');
   };
-
-
-
+*/
 	renderCheckoutHeader();
 
 	renderOrderSummary();

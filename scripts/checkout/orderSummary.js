@@ -155,17 +155,21 @@ export function renderOrderSummary() {
 
     const container = document.querySelector(`.js-cart-item-container-${productId}`);
 
-    const quantityInput = document.querySelector('.js-quantity-input');
+    const quantityInput = document.querySelector(`.js-quantity-input-${productId}`);
 
     const newQuantity = Number(quantityInput.value);
 
     const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
-
-    if (newQuantity >= 0 && newQuantity < 1000) {
+    if (newQuantity > 0 && newQuantity < 1000) {
       container.classList.remove('is-editing-quantity');
       updateQuantity(productId, newQuantity);
       quantityLabel.innerHTML = newQuantity;
       updateCartQuantity();
+    } else if (newQuantity === 0) {
+        removeFromCart(productId);
+        renderOrderSummary();
+        updateCartQuantity();
+        renderPaymentSummary();
     } else {
       alert('Quantity must be at less than 1000!!')
     }
